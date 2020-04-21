@@ -56,12 +56,13 @@ int comparo_gName(const void *pA, const void *pB)
  *
  */
 int comparo_grade(const void *pA, const void *pB)
+
 {
 	stuDA_t student_A = *((stuDA_t*) pA);
 	stuDA_t student_B = *((stuDA_t*) pB);
 
 	float grade_A =student_A.data.grade;
-	float grade_B =student_A.data.grade;
+	float grade_B =student_B.data.grade;
 
 	if (grade_A<grade_B)
 		return -1;
