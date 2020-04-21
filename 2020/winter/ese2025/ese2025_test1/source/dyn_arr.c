@@ -68,6 +68,8 @@ int comparo_grade(const void *pA, const void *pB)
 		return -1;
 	else if (grade_A>grade_B)
 		return +1;
+
+	return 0;
 }
 
 /*
