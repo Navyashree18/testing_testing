@@ -61,7 +61,7 @@ int comparo_grade(const void *pA, const void *pB)
 	stuDA_t student_B = *((stuDA_t*) pB);
 
 	float grade_A =student_A.data.grade;
-	float grade_A =student_A.data.grade;
+	float grade_B =student_A.data.grade;
 
 	if (grade_A<grade_B)
 		return -1;
@@ -98,8 +98,7 @@ stuDA_t* formDynamicArray(stuLL_t *pHEAD_LL, size_t student_count)
 stuDA_t* sortDynamicArray(stuDA_t *pHEAD, const sort_t sort_type,
 		const size_t array_size)
 {
-	// PROBLEM #5: complete the code for this function
-	//	       NOTE: PLEASE COMMIT CHANGES ONCE YOUR DONE THIS FUNCTION
+
 
 	switch (sort_type)
 	{
@@ -107,9 +106,11 @@ stuDA_t* sortDynamicArray(stuDA_t *pHEAD, const sort_t sort_type,
 		qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_fName);
 		break;
 	case gNamesort:
-		// fill the code here for Part a)
+		qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_gName);
+				break;
 	case gradesort:
-		// fill the code here for Part b)
+		qsort(pHEAD, array_size, sizeof(stuRec_t), comparo_fName);
+				break;
 	}
 	return pHEAD;
 }
